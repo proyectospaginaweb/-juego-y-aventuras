@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+
+  <header>
+    <img src="logo.jpg" alt="Logo" class="logo">
+    <h1>Contáctanos</h1>
+  </header>
+
+  <!-- NAV -->
+  <nav>
+    <button class="btn-inicio"    onclick="location.href='index.html'">Inicio</button>
+    <button class="btn-nosotros"  onclick="location.href='nosotros.html'">Nosotros</button>
+    <button class="btn-jardines"  onclick="location.href='jardines.html'">Nuestros Jardines</button>
+    <button class="btn-contacto"  onclick="location.href='contacto.html'">Contáctanos</button>
+    <button class="btn-faq"       onclick="location.href='faq.html'">Preguntas Frecuentes</button>
+    <button class="btn-galeria"   onclick="location.href='galeria.html'">Galería</button>
+  </nav>
+
+
+  <!-- INTRO -->
+  <section class="intro">
+    <h2>¡Hablemos!</h2>
+    <p>
+      Si deseas más información sobre nuestros jardines o procesos de inscripción,
+      completa el formulario o comunícate directamente con nosotros.
+    </p>
+  </section>
+
+
+  <!-- FORM + INFO -->
+  <section class="equipo" style="max-width: 800px; margin: auto;">
+
+    <div style="margin-bottom: 1.4rem;">
+      <h3 style="color:#1982c4; margin-bottom: .6rem;">Información directa</h3>
+      <p><strong>Teléfono:</strong> +57 320 456 7890</p>
+      <p><strong>Correo:</strong> jardinproyecto3@gmail.com</p>
+      <p><strong>Dirección:</strong> Mosquera, Cundinamarca</p>
+    </div>
+
+    <!-- FORM -->
+    <form onsubmit="guardarDatos(event)"
+      style="
+      display:flex;
+      flex-direction:column;
+      gap: .8rem;
+      background: rgba(255,255,255,0.92);
+      padding:1.3rem;
+      border-radius:12px;
+      border:1px solid #ddd;
+      max-width:520px;
+      margin:auto;">
+      
+      <label>Nombre</label>
+      <input id="nombre" type="text" placeholder="Tu nombre" required
+        style="padding:.5rem; border-radius:6px; border:1px solid #ccc;">
+
+      <label>Correo</label>
+      <input id="correo" type="email" placeholder="Tu correo" required
+        style="padding:.5rem; border-radius:6px; border:1px solid #ccc;">
+
+      <label>Mensaje</label>
+      <textarea id="mensaje" rows="5" placeholder="Escribe tu mensaje..."
+        style="padding:.5rem; border-radius:6px; border:1px solid #ccc;"
+        required></textarea>
+
+      <button class="btn-contacto" type="submit"
+        style="width: fit-content; align-self:center; padding:.6rem 1.2rem;">
+        Enviar
+      </button>
+    </form>
+
+  </section>
+
+
+  <footer>
+    © 2025 Jardín Infantil · Todos los derechos reservados
+  </footer>
+
+
+<!-- SCRIPT GUARDAR FORM -->
+<script>
+  function guardarDatos(e){
+    e.preventDefault();
+
+    let datos = JSON.parse(localStorage.getItem("formData")) || [];
+
+    datos.push({
+      nombre: document.getElementById("nombre").value,
+      correo: document.getElementById("correo").value,
+      mensaje: document.getElementById("mensaje").value
+    });
+
+    localStorage.setItem("formData", JSON.stringify(datos));
+    alert("Formulario enviado ✅");
+  }
+</script>
+
+<!-- TRIPLE CLICK -->
+<script>
+  let clicks = 0;
+  let timer = null;
+
+  document.querySelector(".logo").addEventListener("click", () => {
+    clicks++;
+    if (clicks === 3) {
+      location.href = "admin.html";
+    }
+    clearTimeout(timer);
+    timer = setTimeout(() => clicks = 0, 800);
+  });
+</script>
+
+</body>
+</html>

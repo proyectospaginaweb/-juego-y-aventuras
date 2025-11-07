@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preguntas Frecuentes</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+
+<header>
+  <img src="logo.jpg" alt="Logo Jardín" class="logo">
+  <h1>Preguntas Frecuentes</h1>
+</header>
+
+<!-- NAV -->
+<nav>
+  <button class="btn-inicio"    onclick="location.href='index.html'">Inicio</button>
+  <button class="btn-nosotros"  onclick="location.href='nosotros.html'">Nosotros</button>
+  <button class="btn-jardines"  onclick="location.href='jardines.html'">Nuestros Jardines</button>
+  <button class="btn-contacto"  onclick="location.href='contacto.html'">Contáctanos</button>
+  <button class="btn-faq"       onclick="location.href='faq.html'">Preguntas Frecuentes</button>
+  <button class="btn-galeria"   onclick="location.href='galeria.html'">Galería</button>
+</nav>
+
+
+<section class="intro">
+  <h2>¡Resolvemos tus dudas!</h2>
+  <p>
+    Aquí encontrarás respuestas a las preguntas más comunes sobre nuestros servicios, 
+    procesos e información institucional.
+  </p>
+</section>
+
+
+<!-- LISTA FAQ -->
+<section class="faq-container">
+
+  <!-- Cada ítem FAQ -->
+  <div class="faq-item">
+    <h3>1. ¿En qué horarios funciona el jardín?</h3>
+    <p>De lunes a viernes de 7:00 am a 5:00 pm.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>2. ¿Desde qué edad se reciben niños?</h3>
+    <p>Recibimos niños desde 1 año hasta los 5 años.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>3. ¿Tienen opción de media jornada?</h3>
+    <p>Sí, contamos con media jornada en la mañana y tarde.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>4. ¿Qué seguridad ofrece el jardín?</h3>
+    <p>Contamos con cámaras, registro de ingreso, personal capacitado y protocolos de seguridad.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>5. ¿Los niños reciben alimentación?</h3>
+    <p>Sí, ofrecemos alimentación completa y balanceada.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>6. ¿Qué métodos de aprendizaje utilizan?</h3>
+    <p>Aprendizaje basado en juego, exploración y Montessori.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>7. ¿Qué documentos se deben presentar para la inscripción?</h3>
+    <p>Registro civil, carné de vacunas y documentos del acudiente.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>8. ¿Tienen actividades extracurriculares?</h3>
+    <p>Sí, con actividades como música, arte, baile e inglés.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>9. ¿El jardín realiza salidas pedagógicas?</h3>
+    <p>Sí, con previa autorización de padres.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>10. ¿Tienen servicio de transporte?</h3>
+    <p>Sí, cubrimos Mosquera y zonas cercanas.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>11. ¿Incluyen apoyo psicológico?</h3>
+    <p>Contamos con acompañamiento psicológico infantil.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>12. ¿Cómo puedo agendar una visita?</h3>
+    <p>Por teléfono, correo o formulario web.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>13. ¿Qué protocolos tienen para emergencias?</h3>
+    <p>Brigada y planes de evacuación actualizados.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>14. ¿Puedo pagar mensualidad online?</h3>
+    <p>Sí, ofrecemos pago virtual.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>15. ¿Qué tamaño tienen los grupos?</h3>
+    <p>Máx. 12 niños por educador.</p>
+  </div>
+
+</section>
+
+
+<footer>
+  © 2025 Jardín Infantil · Todos los derechos reservados
+</footer>
+
+
+<script>
+  // Animación abrir/cerrar FAQ
+  const items = document.querySelectorAll(".faq-item");
+
+  items.forEach((item) => {
+    const pregunta = item.querySelector("h3");
+    const respuesta = item.querySelector("p");
+
+    respuesta.style.display = "none";
+
+    pregunta.addEventListener("click", () => {
+      const visible = respuesta.style.display === "block";
+
+      if (visible) {
+        respuesta.style.opacity = 0;
+        setTimeout(() => {
+          respuesta.style.display = "none";
+        }, 200);
+      } else {
+        respuesta.style.display = "block";
+        setTimeout(() => {
+          respuesta.style.opacity = 1;
+        }, 10);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
